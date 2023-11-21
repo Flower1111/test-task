@@ -1,0 +1,197 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-11-21T15:31:15.549Z",
+    "end": "2023-11-21T15:31:21.888Z",
+    "duration": 6339,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d7e7050a-26d2-4438-a789-4ccbd8bdfe8d",
+      "title": "",
+      "fullFile": "cypress/integration/todo.spec.js",
+      "file": "cypress/integration/todo.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8cff3bce-eb43-4a9f-93d0-922adbe74c72",
+          "title": "todo application",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "can add new task",
+              "fullTitle": "todo application can add new task",
+              "timedOut": null,
+              "duration": 1415,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "(0, _base.addTodoItem)(firstTask);\n(0, _base.assertTodoItem)(firstTask);",
+              "err": {},
+              "uuid": "27eb3412-d743-42c7-903c-c6f5067de1a3",
+              "parentUUID": "8cff3bce-eb43-4a9f-93d0-922adbe74c72",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "can check off a task as completed",
+              "fullTitle": "todo application can check off a task as completed",
+              "timedOut": null,
+              "duration": 570,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "(0, _base.addTodoItem)(secondTask);\n(0, _base.checkOffTodoItem)(secondTask);\n(0, _base.assertTodoItemCompleted)(secondTask);",
+              "err": {},
+              "uuid": "76202662-540f-4a05-ac26-2871f3d38c9d",
+              "parentUUID": "8cff3bce-eb43-4a9f-93d0-922adbe74c72",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "can delete task",
+              "fullTitle": "todo application can delete task",
+              "timedOut": null,
+              "duration": 607,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "(0, _base.addTodoItem)(secondTask);\n(0, _base.checkOffTodoItem)(secondTask);\n(0, _base.clearCompletedTasks)();\n(0, _base.assertClearCompletedNotExists)();",
+              "err": {},
+              "uuid": "31f2e6e3-e950-45dd-9972-0064936d5cde",
+              "parentUUID": "8cff3bce-eb43-4a9f-93d0-922adbe74c72",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [
+            {
+              "uuid": "c73f59f5-139d-4e86-92c6-4ef90fbc0801",
+              "title": "can filter tasks",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "can filter for uncompleted tasks",
+                  "fullTitle": "todo application can filter tasks can filter for uncompleted tasks",
+                  "timedOut": null,
+                  "duration": 827,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "(0, _base.filterForTasks)('Active');\ncy.get(todoList).should('have.length', 1).first().should('have.text', secondTask);",
+                  "err": {},
+                  "uuid": "9604e551-be97-413f-84e7-4d96405d9703",
+                  "parentUUID": "c73f59f5-139d-4e86-92c6-4ef90fbc0801",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "can filter for completed tasks",
+                  "fullTitle": "todo application can filter tasks can filter for completed tasks",
+                  "timedOut": null,
+                  "duration": 818,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "(0, _base.filterForTasks)('Completed');\ncy.get(todoList).should('have.length', 1).first().should('have.text', firstTask);",
+                  "err": {},
+                  "uuid": "ae2940d3-ca99-4d25-859a-e3e2e8e6b1ad",
+                  "parentUUID": "c73f59f5-139d-4e86-92c6-4ef90fbc0801",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "9604e551-be97-413f-84e7-4d96405d9703",
+                "ae2940d3-ca99-4d25-859a-e3e2e8e6b1ad"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 1645,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [
+            "27eb3412-d743-42c7-903c-c6f5067de1a3",
+            "76202662-540f-4a05-ac26-2871f3d38c9d",
+            "31f2e6e3-e950-45dd-9972-0064936d5cde"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2592,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
