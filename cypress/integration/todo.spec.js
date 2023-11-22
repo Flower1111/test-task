@@ -1,56 +1,46 @@
-import { addTodoItem, assertTodoItem, checkOffTodoItem, assertTodoItemCompleted, 
-  clearCompletedTasks, assertClearCompletedNotExists, filterForTasks } from '../common/base.js';
+import TodoPage from "../pages/todoPage";
 
 describe('todo application', () => {
-  const mainPage = 'https://todomvc.com/examples/react/#/';
   const firstTask = 'Buy milk';
   const secondTask = 'Buy bread';
-  // const thirdTask = 'Buy sugar';
-  const todoList = '.todo-list li'
 
   beforeEach(() => {
-    cy.visit(mainPage)
+    TodoPage.visit();
   })
 
   it('can add new task', () => {
-    addTodoItem(firstTask);
-    assertTodoItem(firstTask);
+    TodoPage.addTodoItem(firstTask);
+    TodoPage.assertTodoItem(firstTask);
   })
 
   it('can check off a task as completed', () => {
-    addTodoItem(secondTask);
-    checkOffTodoItem(secondTask);
-    assertTodoItemCompleted(secondTask);
+    TodoPage.addTodoItem(secondTask);
+    TodoPage.checkOffTodoItem(secondTask);
+    TodoPage.assertTodoItemCompleted(secondTask);
   })
 
   it('can delete task', () => {
-    addTodoItem(secondTask);
-    checkOffTodoItem(secondTask);
-    clearCompletedTasks();
-    assertClearCompletedNotExists();
+    TodoPage.addTodoItem(secondTask);
+    TodoPage.checkOffTodoItem(secondTask);
+    TodoPage.clearCompletedTasks();
+    TodoPage.assertClearCompletedNotExists();
   })
 
   context('can filter tasks', () => {
     beforeEach(() => {
-      addTodoItem(firstTask);
-      addTodoItem(secondTask);
-      checkOffTodoItem(firstTask);
+      TodoPage.addTodoItem(firstTask);
+      TodoPage.addTodoItem(secondTask);
+      TodoPage.checkOffTodoItem(firstTask);
     })
 
     it('can filter for uncompleted tasks', () => {
-      filterForTasks('Active');
-      cy.get(todoList)
-        .should('have.length', 1)
-        .first()
-        .should('have.text', secondTask);
+      TodoPage.filterForTasks('Active');
+      TodoPage.assertTaskCountAndText(1, secondTask);
     })
 
     it('can filter for completed tasks', () => {
-      filterForTasks('Completed');
-      cy.get(todoList)
-        .should('have.length', 1)
-        .first()
-        .should('have.text', firstTask);
+      TodoPage.filterForTasks('Completed');
+      TodoPage.assertTaskCountAndText(1, firstTask);
     })
   })
 })
