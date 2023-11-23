@@ -5,9 +5,9 @@
     "passes": 5,
     "pending": 0,
     "failures": 0,
-    "start": "2023-11-22T21:24:15.659Z",
-    "end": "2023-11-22T21:24:22.228Z",
-    "duration": 6569,
+    "start": "2023-11-23T07:29:23.368Z",
+    "end": "2023-11-23T07:29:29.753Z",
+    "duration": 6385,
     "testsRegistered": 5,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "d29e089f-0b08-4012-9da0-6e5db2fb9809",
+      "uuid": "26e0d779-debc-43eb-8e09-033fa1ec0b7c",
       "title": "",
       "fullFile": "cypress/integration/todo.spec.js",
       "file": "cypress/integration/todo.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "d65ff2a8-3201-44ba-88c1-e14c4b46de9c",
+          "uuid": "b6334e76-582f-42c3-9648-79e1aedda81b",
           "title": "todo application",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "can add new task",
               "fullTitle": "todo application can add new task",
               "timedOut": null,
-              "duration": 1188,
+              "duration": 1451,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "_todoPage.default.addTodoItem(firstTask);\n_todoPage.default.assertTodoItem(firstTask);",
               "err": {},
-              "uuid": "44f6d5cd-1521-494f-aa52-b59973750173",
-              "parentUUID": "d65ff2a8-3201-44ba-88c1-e14c4b46de9c",
+              "uuid": "93cb5c3d-0f68-453a-a014-4edb1eab66c2",
+              "parentUUID": "b6334e76-582f-42c3-9648-79e1aedda81b",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "can check off a task as completed",
               "fullTitle": "todo application can check off a task as completed",
               "timedOut": null,
-              "duration": 748,
+              "duration": 557,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,8 +65,8 @@
               "context": null,
               "code": "_todoPage.default.addTodoItem(secondTask);\n_todoPage.default.checkOffTodoItem(secondTask);\n_todoPage.default.assertTodoItemCompleted(secondTask);",
               "err": {},
-              "uuid": "0692c9c8-d19a-47a8-8eb0-bea9a3d2c2df",
-              "parentUUID": "d65ff2a8-3201-44ba-88c1-e14c4b46de9c",
+              "uuid": "240d7bc1-0076-4e3e-881a-a2f13402540c",
+              "parentUUID": "b6334e76-582f-42c3-9648-79e1aedda81b",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "can delete task",
               "fullTitle": "todo application can delete task",
               "timedOut": null,
-              "duration": 717,
+              "duration": 624,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -83,15 +83,15 @@
               "context": null,
               "code": "_todoPage.default.addTodoItem(secondTask);\n_todoPage.default.checkOffTodoItem(secondTask);\n_todoPage.default.clearCompletedTasks();\n_todoPage.default.assertClearCompletedNotExists();",
               "err": {},
-              "uuid": "78cc217a-c961-41eb-b436-f75e358cf79c",
-              "parentUUID": "d65ff2a8-3201-44ba-88c1-e14c4b46de9c",
+              "uuid": "86c8ca53-da2a-4c72-855a-fbb3b9d5c56c",
+              "parentUUID": "b6334e76-582f-42c3-9648-79e1aedda81b",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [
             {
-              "uuid": "2263c5a1-bb65-4fcd-a475-412e85074c34",
+              "uuid": "1769ced2-a276-4488-951d-3881467d8649",
               "title": "can filter tasks",
               "fullFile": "",
               "file": "",
@@ -102,7 +102,7 @@
                   "title": "can filter for uncompleted tasks",
                   "fullTitle": "todo application can filter tasks can filter for uncompleted tasks",
                   "timedOut": null,
-                  "duration": 908,
+                  "duration": 817,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -111,8 +111,8 @@
                   "context": null,
                   "code": "_todoPage.default.filterForTasks('Active');\n_todoPage.default.assertTaskCountAndText(1, secondTask);",
                   "err": {},
-                  "uuid": "e60e97dd-d97c-449f-b837-dc566f22a0d9",
-                  "parentUUID": "2263c5a1-bb65-4fcd-a475-412e85074c34",
+                  "uuid": "b86885b9-b12a-4288-b4fd-8f2deff16735",
+                  "parentUUID": "1769ced2-a276-4488-951d-3881467d8649",
                   "isHook": false,
                   "skipped": false
                 },
@@ -120,7 +120,7 @@
                   "title": "can filter for completed tasks",
                   "fullTitle": "todo application can filter tasks can filter for completed tasks",
                   "timedOut": null,
-                  "duration": 940,
+                  "duration": 809,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
@@ -129,35 +129,35 @@
                   "context": null,
                   "code": "_todoPage.default.filterForTasks('Completed');\n_todoPage.default.assertTaskCountAndText(1, firstTask);",
                   "err": {},
-                  "uuid": "8f568f06-a38c-4461-a9d1-7bfbb80fb401",
-                  "parentUUID": "2263c5a1-bb65-4fcd-a475-412e85074c34",
+                  "uuid": "350d60e8-5807-4835-91df-fb766ba99fda",
+                  "parentUUID": "1769ced2-a276-4488-951d-3881467d8649",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "e60e97dd-d97c-449f-b837-dc566f22a0d9",
-                "8f568f06-a38c-4461-a9d1-7bfbb80fb401"
+                "b86885b9-b12a-4288-b4fd-8f2deff16735",
+                "350d60e8-5807-4835-91df-fb766ba99fda"
               ],
               "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1848,
+              "duration": 1626,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             }
           ],
           "passes": [
-            "44f6d5cd-1521-494f-aa52-b59973750173",
-            "0692c9c8-d19a-47a8-8eb0-bea9a3d2c2df",
-            "78cc217a-c961-41eb-b436-f75e358cf79c"
+            "93cb5c3d-0f68-453a-a014-4edb1eab66c2",
+            "240d7bc1-0076-4e3e-881a-a2f13402540c",
+            "86c8ca53-da2a-4c72-855a-fbb3b9d5c56c"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2653,
+          "duration": 2632,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

@@ -2,6 +2,7 @@ class TodoPage {
     constructor() {
         this.url = 'https://todomvc.com/examples/react/#/';
         this.todoList = '.todo-list li';
+        this.inputNewTodo = 'input.new-todo';
     }
 
     visit() {
@@ -9,7 +10,7 @@ class TodoPage {
     }
 
     addTodoItem = (item) => {
-        cy.get('input.new-todo').type(`${item}{enter}`);
+        cy.get(this.inputNewTodo).type(`${item}{enter}`);
     };
 
     assertTodoItem = (item) => {
